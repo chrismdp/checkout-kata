@@ -2,13 +2,13 @@ require File.dirname(__FILE__) + "/spec_helper"
 
 
 describe "Checkout" do
-  context "total" do
+  context "q" do
     def price(string)
-      checkout = Checkout.new
+      checkout = Klass.new
       string.split(//).each do |item|
-        checkout.scan(item)
+        checkout.s(item)
       end
-      checkout.total
+      checkout.q
     end
 
     it "is 0 if nothing has been scanned" do
@@ -53,17 +53,17 @@ describe "Checkout" do
       price('DABABA').should == 190
     end
     it "handles incremental scanning" do
-      checkout = Checkout.new
-      checkout.scan('A')
-      checkout.total.should == 50
-      checkout.scan('B')
-      checkout.total.should == 80
-      checkout.scan('A')
-      checkout.total.should == 130
-      checkout.scan('A')
-      checkout.total.should == 160
-      checkout.scan('B')
-      checkout.total.should == 175
+      checkout = Klass.new
+      checkout.s('A')
+      checkout.q.should == 50
+      checkout.s('B')
+      checkout.q.should == 80
+      checkout.s('A')
+      checkout.q.should == 130
+      checkout.s('A')
+      checkout.q.should == 160
+      checkout.s('B')
+      checkout.q.should == 175
     end
   end
 end
