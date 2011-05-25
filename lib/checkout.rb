@@ -19,7 +19,7 @@ class Checkout
     @items.keys.each do |item|
       total += price(item) * @items[item]
     end
-    total -= 30 * (@items["Cherries"] / 2)
+    total -= 20 * (@items["Cherries"] / 2)
     total -= 150 * (@items["Bananas"] / 2)
     total
   end
@@ -28,5 +28,5 @@ class Checkout
     PRICE[item] || 0
   end
 
-  PRICE = {"Apples" => 100, "Cherries" => 75, "Bananas" => 150}
+  PRICE = {"Apples" => 100, "Pommes" => 100, "Mele" => 100, "Cherries" => 75, "Bananas" => 150}
 end
