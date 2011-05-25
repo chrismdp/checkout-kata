@@ -10,7 +10,7 @@ describe Checkout do
     it "also accepts Cherries" do
       checkout.add("Apples").should == 100
       checkout.add("Cherries").should == 175
-      checkout.add("Cherries").should == 230
+      checkout.add("Cherries").should == 220
     end
 
     it "accepts Bananas" do
@@ -26,10 +26,28 @@ describe Checkout do
   end
 
   context "discounts" do
-    it "takes off 20p for 2 cherries" do
+    it "takes off 30p for 2 cherries" do
       checkout.add("Cherries").should == 75
-      checkout.add("Cherries").should == 130
+      checkout.add("Cherries").should == 120
+      checkout.add("Cherries").should == 195
+      checkout.add("Cherries").should == 240
+    end
+
+    it "is BOGOF for Bananas" do
+      checkout.add("Bananas").should == 150
+      checkout.add("Bananas").should == 150
+      checkout.add("Bananas").should == 300
+      checkout.add("Bananas").should == 300
     end
   end
 
+  it "passes iteration 3a" do
+    checkout.add("Cherries,Cherries,Bananas").should == 270
+  end
+
+  context "CSV" do
+    it "accepts csv lines" do
+      checkout.add("Apples, Cherries,Cherries").should == 220
+    end
+  end
 end

@@ -4,14 +4,25 @@ class Checkout
     @items = Hash.new(0)
   end
 
-  def add(item)
-    @items[item] += 1
-    @total += price(item)
-    @total -= 20 if (@items["Cherries"] >= 2)
-    @total
+  def add(line)
+    line.split(",").each do |item|
+      item.strip!
+      @items[item] += 1
+    end
+    calc_total
   end
 
   private
+
+  def calc_total
+    total = 0
+    @items.keys.each do |item|
+      total += price(item) * @items[item]
+    end
+    total -= 30 * (@items["Cherries"] / 2)
+    total -= 150 * (@items["Bananas"] / 2)
+    total
+  end
 
   def price(item)
     PRICE[item] || 0
