@@ -4,4 +4,7 @@ $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 
 require 'checkout'
 
-Checkout.new.run!(ARGF)
+checkout = Checkout.new
+$stdin.each_line do |line|
+  puts checkout.add(line.strip)
+end
