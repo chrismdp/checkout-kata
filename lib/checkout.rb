@@ -1,10 +1,14 @@
 class Checkout
   def initialize
     @total = 0
+    @items = Hash.new(0)
   end
 
   def add(item)
+    @items[item] += 1
     @total += price(item)
+    @total -= 20 if (@items["Cherries"] >= 2)
+    @total
   end
 
   private

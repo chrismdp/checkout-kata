@@ -10,7 +10,7 @@ describe Checkout do
     it "also accepts Cherries" do
       checkout.add("Apples").should == 100
       checkout.add("Cherries").should == 175
-      checkout.add("Cherries").should == 250
+      checkout.add("Cherries").should == 230
     end
 
     it "accepts Bananas" do
@@ -23,6 +23,13 @@ describe Checkout do
       checkout.add("FOO").should == 150
     end
       
+  end
+
+  context "discounts" do
+    it "takes off 20p for 2 cherries" do
+      checkout.add("Cherries").should == 75
+      checkout.add("Cherries").should == 130
+    end
   end
 
 end
