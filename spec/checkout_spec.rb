@@ -45,24 +45,12 @@ describe Checkout do
     checkout.add("Cherries,Cherries,Bananas").should == 280
   end
 
-  it "passes iteration 4" do
-    checkout.add("Cherries").should == 75
-    checkout.add("Pommes").should == 175
-    checkout.add("Cherries").should == 230
-    checkout.add("Bananas").should == 380
-    checkout.add("Bananas").should == 380
-    checkout.add("Apples").should == 480
-  end
 
-  it "passes iteration 5" do
-    checkout.add("Mele").should == 100
-    checkout.add("Pommes").should == 200
-    checkout.add("Pommes").should == 300
-    checkout.add("Apples").should == 400
-    checkout.add("Pommes").should == 400
-    checkout.add("Mele").should == 450
-    checkout.add("Cherries").should == 525
-    checkout.add("Cherries").should == 580
+  it "passes iteration 6 part 1" do
+    checkout.add("Mele,Pommes,Pommes,Mele").should == 250
+  end
+  it "passes iteartion 6 part 2" do
+    checkout.add("Mele,Pommes,Pommes,Apples,Mele").should == 150
   end
 
   context "CSV" do
