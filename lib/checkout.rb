@@ -20,6 +20,8 @@ class Checkout
       total += price(item) * @items[item]
     end
     total -= 20 * (@items["Cherries"] / 2)
+    total -= 100 * (@items["Pommes"] / 3)
+    total -= 50 * (@items["Mele"] / 2)
     total -= 150 * (@items["Bananas"] / 2)
     total
   end

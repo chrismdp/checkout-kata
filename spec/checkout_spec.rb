@@ -54,6 +54,17 @@ describe Checkout do
     checkout.add("Apples").should == 480
   end
 
+  it "passes iteration 5" do
+    checkout.add("Mele").should == 100
+    checkout.add("Pommes").should == 200
+    checkout.add("Pommes").should == 300
+    checkout.add("Apples").should == 400
+    checkout.add("Pommes").should == 400
+    checkout.add("Mele").should == 450
+    checkout.add("Cherries").should == 525
+    checkout.add("Cherries").should == 580
+  end
+
   context "CSV" do
     it "accepts csv lines" do
       checkout.add("Apples, Cherries,Cherries").should == 230
