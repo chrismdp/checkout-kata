@@ -9,15 +9,17 @@ describe "a simple Checkout class" do
     end.to raise_error
   end
 
-  before do
-    @checkout = Checkout.new
-  end
+  describe "a checkout" do
+    before do
+      @checkout = Checkout.new
+    end
 
-  it "does stuff" do
-    # @checkout already exists
-  end
+    it "does stuff" do
+      # @checkout already exists
+    end
 
-  it "does more stuff" do
-    # @checkout already exists
+    it "does more stuff" do
+      # @checkout already exists
+    end
   end
 end

@@ -1,0 +1,10 @@
+- Write a failing STEP
+- This tells you where to TDD, so then:
+  - Write a failing unit test (or "spec")
+  - Make the test pass
+  - Refactor
+- Repeat until the STEP passes.
+- Refactor whole system
+- Repeat
+
+# http://github.com/chrismdp/config_files
