@@ -1,7 +1,7 @@
-- Write a failing STEP
+- Write a failing STEP in features/step_definitions/checkout_steps.rb
 - This tells you where to TDD, so then:
-  - Write a failing unit test (or "spec")
-  - Make the test pass
+  - Write a failing unit test (or "spec") in spec/checkout_spec.rb
+  - Make the test pass by adding code to lib/checkout.rb
   - Refactor
 - Repeat until the STEP passes.
 - Refactor whole system
@@ -9,4 +9,6 @@
 
 - lib/checkout.rb for production code
 - spec/checkout_spec.rb for unit tests
+
+# My editor config is at
 # http://github.com/chrismdp/config_files
