@@ -1,0 +1,11 @@
+- lib/checkout.rb for production code
+- spec/checkout_spec.rb for unit tests
+- features/step_definitions/scanning_steps.rb for step code
+
+To run rspec:
+$ bundle exec rspec
+
+To run cucumber:
+$ bundle exec cucumber
+
+(My vim config: http://github.com/chrismdp/config_files)

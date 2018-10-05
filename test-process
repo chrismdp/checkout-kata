@@ -7,4 +7,6 @@
 - Refactor whole system
 - Repeat
 
+- lib/checkout.rb for production code
+- spec/checkout_spec.rb for unit tests
 # http://github.com/chrismdp/config_files

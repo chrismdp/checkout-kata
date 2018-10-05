@@ -5,8 +5,25 @@ Feature: Scanning
 
   - Scanning each item adds to the total
   - Apples cost 50p
-  - Aspirin costs 78p
+  - Aspirin costs 23p
   - Can only buy two aspirin at once
+
+  Scenario: Scanning an item
+    Given ...
+    When ...
+    Then ...
+
+
+
+
+
+
+
+
+
+
+
+
 
   # Stretch goal 1
 
